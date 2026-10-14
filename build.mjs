@@ -37,6 +37,8 @@ const abs = (p) => `${siteUrl}/${p.replace(/^\/+/, '')}`;
 const icon = (id, fill = false) => `<svg class="i${fill ? ' i-fill' : ''}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
 
 const waUrl = (msg) => `https://wa.me/${site.whatsapp}${msg ? `?text=${encodeURIComponent(msg)}` : ''}`;
+// "919213900158" → "+91 92139 00158"
+const whatsappDisplay = site.whatsapp.replace(/^91(\d{5})(\d{5})$/, '+91 $1 $2');
 const telHref = `tel:${site.phone.replace(/[^\d+]/g, '')}`;
 const { lat, lng } = site.geo;
 const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=${site.google.placeId}`;
@@ -281,6 +283,7 @@ const baseCtx = {
   ...site,
   siteUrl,
   telHref,
+  whatsappDisplay,
   waHref: waUrl(`Hello! I have an enquiry about paints / colours.`),
   directionsUrl,
   reviewsUrl,

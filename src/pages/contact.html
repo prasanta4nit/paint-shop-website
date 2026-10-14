@@ -1,6 +1,6 @@
 ---
 title: Contact & Directions, Baramasya | {{ name }}
-description: Visit {{ name }}, Baramasya, Bokaro, Jharkhand {{ address.postalCode }}. Call or WhatsApp {{ phone }}. {{ hoursSummary }}.
+description: Visit {{ name }}, Baramasya, Bokaro, Jharkhand {{ address.postalCode }}. Call {{ phone }} or WhatsApp {{ whatsappDisplay }}. {{ hoursSummary }}.
 nav: contact
 crumb: Contact & Location
 schema: business
@@ -25,7 +25,7 @@ schema: business
           </a>
           <a class="card contact-card reveal" href="{{wa "Hello! I have an enquiry."}}" target="_blank" rel="noopener">
             <span class="icon-tile" style="--c:#128c4a"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg></span>
-            <div><h3>WhatsApp</h3><p>Photos, shade names, quantities – just send.</p></div>
+            <div><h3>WhatsApp</h3><p>{{ whatsappDisplay }} – send photos, shade names, quantities</p></div>
           </a>
           <a class="card contact-card reveal" href="{{ directionsUrl }}" target="_blank" rel="noopener">
             <span class="icon-tile" style="--c:#2e3a8c"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg></span>

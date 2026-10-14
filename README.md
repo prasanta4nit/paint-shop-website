@@ -35,7 +35,6 @@ The build prints a reminder for each of these until it is done.
 1. **Set your domain.** Change `siteUrl` in `site.config.json` from `https://www.example.com` to your real address. Canonical links, the sitemap, social previews and structured data all use it.
 2. **Replace the sample offers.** The four offers in `site.config.json` are examples I wrote. Replace them with your real offers and delete `"sample": true`.
 3. **Check these details**, which I inferred and couldn't confirm:
-   - **WhatsApp number.** Is `+91 88266 54761`, from the Google listing, the shop's WhatsApp number?
    - **Product ranges** listed on `products.html`, such as Royale, Silk Glamor, WeatherCoat and Luxol. Remove anything you don't stock.
    - **"1000s of shades"** in the hero. This assumes in-store tinting; the pink machine in the shop photos looks like a Birla Opus tinting machine.
    - **Pipe types.** Astral CPVC/UPVC pipes are assumed; SWR/Drainmaster is visible in the photos.
