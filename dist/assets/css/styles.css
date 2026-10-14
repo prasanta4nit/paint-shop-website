@@ -676,6 +676,15 @@ figure.card { margin: 0; }
 .footer-brand .brand { color: #fff; margin-bottom: 14px; }
 .footer-brand .brand-sub { color: #a99d91; }
 .footer-bottom { border-top: 1px solid rgba(255, 255, 255, .1); padding-block: 22px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: .85rem; color: #a99d91; }
+.dev-credit {
+  flex-basis: 100%; margin: 6px 0 0; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .06);
+  font-size: .78rem; letter-spacing: .02em; color: #8f8378; text-align: center;
+}
+.site-footer .dev-credit a {
+  color: #cfc4b8; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(244, 180, 0, .45);
+  text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .2s ease, text-decoration-color .2s ease;
+}
+.site-footer .dev-credit a:hover { color: var(--marigold); text-decoration-color: currentColor; }
 
 /* ---------- Floating WhatsApp + mobile action bar ---------- */
 .wa-float {
