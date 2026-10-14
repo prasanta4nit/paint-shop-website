@@ -7,8 +7,8 @@
   "category": "Paint store",
   "description": "Paint and sanitary shop in Baramasya, Bokaro (Jharkhand). Berger, Asian Paints and Birla Opus interior and exterior paints, primers, wall putty, enamels, waterproofing, colour advice and sanitary fittings at fair prices.",
 
-  "phone": "+91 92139 00158",
-  "whatsapp": "919213900158",
+  "phone": "+91 88266 54761",
+  "whatsapp": "918826654761",
   "email": "",
 
   "address": {
@@ -43,14 +43,35 @@
     "youtube": ""
   },
 
+  "hi": {
+    "name": "आहना एंटरप्राइजेज",
+    "fullName": "आहना एंटरप्राइजेज – प्रीमियम पेंट्स और सैनिटरी सॉल्यूशंस",
+    "tagline": "प्रीमियम पेंट्स और सैनिटरी सॉल्यूशंस",
+    "description": "बरमस्य, बोकारो (झारखंड) में पेंट और सैनिटरी की दुकान। Berger, Asian Paints और Birla Opus के इंटीरियर-एक्सटीरियर पेंट, प्राइमर, वॉल पुट्टी, एनामेल, वॉटरप्रूफिंग, रंगों की सलाह और सैनिटरी फ़िटिंग – सही दाम पर।",
+    "address": {
+      "street": "बरमस्य",
+      "locality": "बरमस्य",
+      "district": "बोकारो",
+      "region": "झारखंड",
+      "countryName": "भारत",
+      "plusCode": "F8P5+3X बरमस्य, झारखंड"
+    },
+    "areaServed": ["बरमस्य", "चंदनकियारी", "बोकारो ज़िला"]
+  },
+
   "paintBrands": [
-    { "name": "Berger Paints", "colour": "#1D4E9E", "note": "Interior & exterior emulsions, distempers, enamels, primers and waterproofing." },
-    { "name": "Asian Paints", "colour": "#E4002B", "note": "Trusted interior emulsions, exterior paints, enamels and wall care." },
-    { "name": "Birla Opus", "colour": "#B0186E", "note": "The new paint range from the Aditya Birla Group, tinted to your shade." }
+    { "name": "Berger Paints", "colour": "#1D4E9E", "note": "Interior & exterior emulsions, distempers, enamels, primers and waterproofing.",
+      "hi": { "note": "इंटीरियर और एक्सटीरियर इमल्शन, डिस्टेंपर, एनामेल, प्राइमर और वॉटरप्रूफिंग।" } },
+    { "name": "Asian Paints", "colour": "#E4002B", "note": "Trusted interior emulsions, exterior paints, enamels and wall care.",
+      "hi": { "note": "भरोसेमंद इंटीरियर इमल्शन, एक्सटीरियर पेंट, एनामेल और दीवारों की देखभाल।" } },
+    { "name": "Birla Opus", "colour": "#B0186E", "note": "The new paint range from the Aditya Birla Group, tinted to your shade.",
+      "hi": { "note": "आदित्य बिड़ला ग्रुप की नई पेंट रेंज, आपकी पसंद के शेड में।" } }
   ],
   "sanitaryBrands": [
-    { "name": "Astral Pipes", "colour": "#0B5CAB", "note": "CPVC, UPVC & SWR pipes and Drainmaster fittings." },
-    { "name": "Benson", "colour": "#C62828", "note": "Flushing cisterns and bathroom fittings." }
+    { "name": "Astral Pipes", "colour": "#0B5CAB", "note": "CPVC, UPVC & SWR pipes and Drainmaster fittings.",
+      "hi": { "note": "CPVC, UPVC और SWR पाइप तथा Drainmaster फ़िटिंग।" } },
+    { "name": "Benson", "colour": "#C62828", "note": "Flushing cisterns and bathroom fittings.",
+      "hi": { "note": "फ़्लशिंग सिस्टर्न और बाथरूम फ़िटिंग।" } }
   ],
 
   "offers": [
@@ -60,7 +81,12 @@
       "title": "Diwali & Chhath home makeover",
       "text": "Special prices on interior emulsions and distempers for your festive painting. Bring your room size – we'll work out the exact quantity.",
       "validTill": "2026-11-15",
-      "colour": "#F4B400"
+      "colour": "#F4B400",
+      "hi": {
+        "tag": "त्योहार ऑफ़र",
+        "title": "दिवाली और छठ पर घर की रंगाई",
+        "text": "त्योहार की पुताई के लिए इंटीरियर इमल्शन और डिस्टेंपर पर ख़ास दाम। अपने कमरे का नाप लाएँ – हम सही मात्रा बता देंगे।"
+      }
     },
     {
       "sample": true,
@@ -68,7 +94,12 @@
       "title": "Free colour consultation",
       "text": "Share a photo of your room or house on WhatsApp and we'll shortlist shades, finishes and the right primer for your walls.",
       "validTill": "",
-      "colour": "#0E7C7B"
+      "colour": "#0E7C7B",
+      "hi": {
+        "tag": "मुफ़्त सेवा",
+        "title": "रंग चुनने में मुफ़्त सलाह",
+        "text": "अपने कमरे या घर की फ़ोटो WhatsApp पर भेजें – हम आपकी दीवारों के लिए शेड, फ़िनिश और सही प्राइमर सुझाएँगे।"
+      }
     },
     {
       "sample": true,
@@ -76,7 +107,12 @@
       "title": "Painter & contractor pricing",
       "text": "Better rates for painters, contractors and bulk orders of paint, putty, primer and Astral pipes. Ask us for a quote.",
       "validTill": "",
-      "colour": "#8E1F2F"
+      "colour": "#8E1F2F",
+      "hi": {
+        "tag": "थोक और ठेकेदार",
+        "title": "पेंटर और ठेकेदारों के लिए ख़ास रेट",
+        "text": "पेंट, पुट्टी, प्राइमर और Astral पाइप के थोक ऑर्डर पर पेंटर और ठेकेदारों को बेहतर रेट। कोटेशन के लिए पूछें।"
+      }
     },
     {
       "sample": true,
@@ -84,7 +120,12 @@
       "title": "Putty + primer + paint combo",
       "text": "Buy the complete wall system together – wall putty, primer and emulsion – and save on the full package.",
       "validTill": "2026-12-31",
-      "colour": "#2E3A8C"
+      "colour": "#2E3A8C",
+      "hi": {
+        "tag": "कॉम्बो",
+        "title": "पुट्टी + प्राइमर + पेंट कॉम्बो",
+        "text": "दीवार का पूरा सामान एक साथ लें – वॉल पुट्टी, प्राइमर और इमल्शन – और पूरे पैकेज पर बचत करें।"
+      }
     }
   ],
 
@@ -93,13 +134,21 @@
       "text": "Excellent paint and sanitary shop with a wide range of quality paints (Berger, Asian and Birla Opus) and accessories. Friendly staff, reasonable price and great service. Highly recommended.",
       "rating": 5,
       "source": "Google",
-      "note": ""
+      "note": "",
+      "hi": {
+        "text": "बेहतरीन पेंट और सैनिटरी दुकान, जहाँ अच्छी क्वालिटी के पेंट (Berger, Asian और Birla Opus) और एक्सेसरीज़ की बड़ी रेंज है। दोस्ताना स्टाफ़, सही दाम और बढ़िया सर्विस। ज़रूर जाएँ।",
+        "note": "अंग्रेज़ी से अनुवादित"
+      }
     },
     {
       "text": "This is a very good home paint shop. The paint quality is good and the variety of colours is quite good. The shopkeeper is friendly and gives accurate advice. The prices are also reasonable. I would recommend this shop for home painting.",
       "rating": 5,
       "source": "Google",
-      "note": "Translated from Hindi"
+      "note": "Translated from Hindi",
+      "hi": {
+        "text": "यहाँ घर के रंग-रोगन के लिए बहुत अच्छी दुकान है। यहाँ पेंट की क्वालिटी अच्छी है और रंगों की वैरायटी भी काफी अच्छी मिलती है। दुकानदार का व्यवहार अच्छा है और सही सलाह भी देते हैं। कीमतें भी उचित हैं। घर की पेंटिंग के लिए मैं इस दुकान की सलाह दूँगा।",
+        "note": ""
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-IN">
+<html lang="{{ t.htmlLang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,6 +7,7 @@
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}">
   <link rel="canonical" href="{{ page.canonical }}">
+  {{{ page.alternatesHtml }}}
   <meta name="robots" content="{{ page.robots }}">
   <meta name="theme-color" content="#8e1f2f">
   <meta name="geo.region" content="{{ address.regionCode }}">
@@ -16,7 +17,8 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ name }}">
-  <meta property="og:locale" content="en_IN">
+  <meta property="og:locale" content="{{ t.ogLocale }}">
+  <meta property="og:locale:alternate" content="{{ ogLocaleAlt }}">
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description }}">
   <meta property="og:url" content="{{ page.canonical }}">
@@ -25,17 +27,17 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" href="{{ root }}favicon.ico" sizes="32x32">
+  <link rel="icon" href="{{ root }}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ root }}assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="{{ root }}site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+  {{{ fontsHtml }}}
   <link rel="stylesheet" href="{{ assets.css }}">
   {{{ page.preloadHtml }}}
-  <script>document.documentElement.classList.add('js')</script>
+  <script>document.documentElement.classList.add('js');window.SITE_STRINGS={{{ jsStrings }}}</script>
   {{{ page.jsonLd }}}
 </head>
 <body data-hours="{{ hoursJson }}">
@@ -75,30 +77,31 @@
     <symbol id="logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="14" fill="#8e1f2f"/><path d="M0 30c8-3 14 3 22 0s14-4 26 0v4c-8-2-14 2-21 1 3 2 3 9-1 9s-4-6-2-9c-9 1-16-3-24-1z" fill="#f4b400"/><path d="M15.5 30 24 10.5 32.5 30" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 23h10" stroke="#fff" stroke-width="4" stroke-linecap="round"/></symbol>
   </svg>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="{{ name }} – home">
+      <a class="brand" href="index.html" aria-label="{{ name }} – {{ t.homeAria }}">
         <svg class="brand-mark" aria-hidden="true"><use href="#logo"/></svg>
         <span class="brand-text">
           <span class="brand-name">{{ name }}</span>
-          <span class="brand-sub">Paints · Colours · Sanitary</span>
+          <span class="brand-sub">{{ t.brandSub }}</span>
         </span>
       </a>
-      <nav class="site-nav" id="site-nav" aria-label="Main">
+      <nav class="site-nav" id="site-nav" aria-label="{{ t.navAria }}">
         <ul class="nav-list">
           {{{ navHtml }}}
         </ul>
         <div class="nav-drawer-actions">
-          <a class="btn btn--wa" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp enquiry</a>
-          <a class="btn btn--ghost" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call {{ phone }}</a>
+          <a class="btn btn--wa" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>{{ t.whatsappEnquiry }}</a>
+          <a class="btn btn--ghost" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{ t.callPhone }}</a>
         </div>
       </nav>
       <div class="header-actions">
-        <a class="icon-btn header-call" href="{{ telHref }}" aria-label="Call {{ phone }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></a>
-        <a class="btn btn--wa btn--sm" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <a class="lang-switch" href="{{ langSwitchHref }}" hreflang="{{ t.langSwitchHreflang }}" lang="{{ otherLang }}" aria-label="{{ t.langSwitchAria }}">{{ t.langSwitch }}</a>
+        <a class="icon-btn header-call" href="{{ telHref }}" aria-label="{{ t.callPhone }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></a>
+        <a class="btn btn--wa btn--sm" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>{{ t.whatsapp }}</a>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="{{ t.openMenu }}">
           <svg class="i" aria-hidden="true"><use href="#i-menu"/></svg>
         </button>
       </div>
@@ -120,50 +123,50 @@
             <span class="brand-sub">{{ tagline }}</span>
           </span>
         </a>
-        <p>Your neighbourhood paint and sanitary shop in {{ address.locality }}, {{ address.district }}. {{ paintBrandText }} paints, primers, putty and waterproofing – with friendly, honest advice.</p>
-        <p><a href="{{ reviewsUrl }}" target="_blank" rel="noopener">★ {{ ratingText }} on Google · Read reviews</a></p>
+        <p>{{ t.footerAbout }}</p>
+        <p><a href="{{ reviewsUrl }}" target="_blank" rel="noopener">{{ t.ratingLink }}</a></p>
       </div>
       <div>
-        <h2>Explore</h2>
+        <h2>{{ t.explore }}</h2>
         <ul>
           {{{ footerNavHtml }}}
         </ul>
       </div>
       <div>
-        <h2>Visit us</h2>
+        <h2>{{ t.visitUs }}</h2>
         <address>
           {{ fullName }}<br>
           {{ addressLines }}<br>
-          <span class="small">Plus code: {{ address.plusCode }}</span>
+          <span class="small">{{ t.plusCode }}: {{ address.plusCode }}</span>
         </address>
         <p style="margin-top:.8rem">{{ hoursSummary }}</p>
       </div>
       <div>
-        <h2>Get in touch</h2>
+        <h2>{{ t.getInTouch }}</h2>
         <ul>
-          <li><a href="{{ telHref }}">Call {{ phone }}</a></li>
-          <li><a href="{{ waHref }}" target="_blank" rel="noopener">WhatsApp {{ whatsappDisplay }}</a></li>
+          <li><a href="{{ telHref }}">{{ t.footerCall }}</a></li>
+          <li><a href="{{ waHref }}" target="_blank" rel="noopener">{{ t.footerWa }}</a></li>
           {{{ emailFooterHtml }}}
-          <li><a href="{{ directionsUrl }}" target="_blank" rel="noopener">Get directions on Google Maps</a></li>
-          <li><a href="{{ writeReviewUrl }}" target="_blank" rel="noopener">Write us a Google review</a></li>
+          <li><a href="{{ directionsUrl }}" target="_blank" rel="noopener">{{ t.footerDirections }}</a></li>
+          <li><a href="{{ writeReviewUrl }}" target="_blank" rel="noopener">{{ t.footerReview }}</a></li>
           {{{ socialFooterHtml }}}
         </ul>
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© {{ year }} {{ name }}, {{ address.locality }}. All rights reserved.</span>
-      <span>Brand names are trademarks of their respective owners. Colours on screen are indicative.</span>
-      <p class="dev-credit">Website designed and developed by <a href="https://www.prasantagorai.com/" target="_blank" rel="noopener">Prasanta Gorai<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <span>{{ t.rights }}</span>
+      <span>{{ t.trademarks }}</span>
+      <p class="dev-credit" lang="en">Website designed and developed by <a href="https://www.prasantagorai.com/" target="_blank" rel="noopener">Prasanta Gorai<span class="visually-hidden"> {{ t.newTab }}</span></a></p>
     </div>
   </footer>
 
-  <a class="wa-float" href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
-    <svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg><span>Chat with us</span>
+  <a class="wa-float" href="{{ waHref }}" target="_blank" rel="noopener" aria-label="{{ t.chatAria }}">
+    <svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg><span>{{ t.chatWithUs }}</span>
   </a>
-  <nav class="mobile-bar" aria-label="Quick actions">
-    <a href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
-    <a class="wa" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-    <a href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg>Directions</a>
+  <nav class="mobile-bar" aria-label="{{ t.quickActions }}">
+    <a href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{ t.call }}</a>
+    <a class="wa" href="{{ waHref }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>{{ t.whatsapp }}</a>
+    <a href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg>{{ t.directions }}</a>
   </nav>
   <div class="toast" role="status" aria-live="polite"></div>
 

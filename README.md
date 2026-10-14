@@ -18,6 +18,29 @@ Plain HTML, CSS and a little vanilla JavaScript. There are no frameworks and not
 On every page:
 - a floating WhatsApp button (on phones, a Call · WhatsApp · Directions bar instead)
 - a live "Open now · closes 8:00 PM" status, calculated in India time
+- a **हिंदी / English** switch
+
+## English and Hindi
+
+Every page exists in both languages. English is at the site root (`/products.html`) and Hindi under `/hi/` (`/hi/products.html`). The header switch jumps to the same page in the other language.
+
+Each page tells Google about its other-language version (`hreflang` links, and pairs in `sitemap.xml`), so Hindi searches like "बरमस्य पेंट की दुकान" can show the Hindi page. The Hindi pages load Devanagari fonts (Mukta and Noto Serif Devanagari); English pages don't download them.
+
+WhatsApp messages from the Hindi pages arrive in Hindi. That includes the calculator estimate, the colour enquiries and the enquiry form.
+
+| What to change | English | Hindi |
+|---|---|---|
+| Page text | `src/pages/*.html` | `src/pages/hi/*.html` |
+| Menu, footer, buttons, hours, calculator and colour-tool messages | `src/i18n/en.json` | `src/i18n/hi.json` |
+| Shop name, address, description | top-level fields in `site.config.json` | the `"hi"` block in `site.config.json` |
+| Offers, reviews, brand notes | each item's fields | each item's `"hi": { ... }` |
+| Colour names | `"name"` in `src/data/colours.json` | `"hi"` on the same colour |
+
+Spellings for the Hindi name and address (आहना एंटरप्राइजेज, बरमस्य, बोकारो, चंदनकियारी, झारखंड) are taken from Google Maps' Hindi listing. The second Google review uses the customer's original Hindi words.
+
+**Adding a page:** create it in both `src/pages/` and `src/pages/hi/` with the same file name. If the Hindi version is missing, the build warns you and the language switch falls back to the Hindi home page.
+
+**When adding an offer,** remember its `"hi"` block. Without one, the Hindi page shows the English text.
 
 ## Quick start
 
@@ -130,8 +153,10 @@ serve.mjs            ← local preview server
 vercel.json          ← Vercel build settings and headers
 src/
   layout.html        ← shared <head>, header, footer
-  pages/*.html       ← one file per page
-  data/colours.json  ← colour catalogue
+  pages/*.html       ← English pages
+  pages/hi/*.html    ← Hindi pages (same file names)
+  i18n/en.json, hi.json ← menu, footer, buttons and script messages per language
+  data/colours.json  ← colour catalogue (English + Hindi names)
   assets/css, js, img
   static/            ← favicon.ico, site.webmanifest (copied to the site root)
 dist/                ← generated website: upload this

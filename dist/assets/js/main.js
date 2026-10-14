@@ -5,6 +5,11 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+  // Interface text for the page's language, injected by the build (src/i18n/<lang>.json → "js").
+  const S = window.SITE_STRINGS;
+  const tpl = (s, vars) => s.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+  window.siteStrings = { S, tpl };
+
   /* ---------- Toast ---------- */
   const toastEl = $('.toast');
   let toastTimer;
@@ -24,7 +29,7 @@
     nav.classList.toggle('is-open', open);
     document.body.classList.toggle('nav-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', open ? S.closeMenu : S.openMenu);
     toggle.querySelector('use').setAttribute('href', open ? '#i-x' : '#i-menu');
   };
   toggle?.addEventListener('click', () => setNav(toggle.getAttribute('aria-expanded') !== 'true'));
@@ -40,10 +45,15 @@
 
   /* ---------- Open / closed status (shop time = India Standard Time) ---------- */
   const DAY_CODES = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
-  const DAY_NAMES = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
   const WEEKDAY_TO_CODE = { Mon: 'Mo', Tue: 'Tu', Wed: 'We', Thu: 'Th', Fri: 'Fr', Sat: 'Sa', Sun: 'Su' };
   const toMinutes = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
-  const fmt = (t) => { const [h, m] = t.split(':').map(Number); return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h < 12 ? 'AM' : 'PM'}`; };
+  // Same format as the build: "8:00 PM" in English, "रात 8:00" in Hindi.
+  const fmt = (t) => {
+    const [h, m] = t.split(':').map(Number);
+    const clock = `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')}`;
+    if (S.lang === 'hi') return `${h < 4 ? 'रात' : h < 12 ? 'सुबह' : h < 16 ? 'दोपहर' : h < 19 ? 'शाम' : 'रात'} ${clock}`;
+    return `${clock} ${h < 12 ? 'AM' : 'PM'}`;
+  };
 
   function shopNow() {
     const parts = new Intl.DateTimeFormat('en-GB', {
@@ -69,15 +79,18 @@
     let text;
     if (today && now.minutes >= toMinutes(today.opens) && now.minutes < toMinutes(today.closes)) {
       open = true;
-      text = `Open now · closes ${fmt(today.closes)}`;
+      text = tpl(S.openNow, { time: fmt(today.closes) });
     } else if (today && now.minutes < toMinutes(today.opens)) {
-      text = `Closed now · opens today ${fmt(today.opens)}`;
+      text = tpl(S.opensToday, { time: fmt(today.opens) });
     } else {
       const idx = DAY_CODES.indexOf(now.day);
       for (let i = 1; i <= 7; i++) {
         const code = DAY_CODES[(idx + i) % 7];
         const h = hoursFor(code);
-        if (h) { text = `Closed now · opens ${i === 1 ? 'tomorrow' : DAY_NAMES[code]} ${fmt(h.opens)}`; break; }
+        if (h) {
+          text = i === 1 ? tpl(S.opensTomorrow, { time: fmt(h.opens) }) : tpl(S.opensDay, { day: S.days[code], time: fmt(h.opens) });
+          break;
+        }
       }
     }
     $$('[data-open-status]').forEach((el) => {
@@ -122,11 +135,11 @@
     if (!form.reportValidity()) return;
     const data = new FormData(form);
     const lines = [
-      'Hello! New enquiry from your website:',
-      `Name: ${data.get('name').trim()}`,
-      data.get('place').trim() && `Area: ${data.get('place').trim()}`,
-      `Looking for: ${data.get('need')}`,
-      data.get('message').trim() && `Details: ${data.get('message').trim()}`,
+      S.enqIntro,
+      `${S.enqName}: ${data.get('name').trim()}`,
+      data.get('place').trim() && `${S.enqArea}: ${data.get('place').trim()}`,
+      `${S.enqNeed}: ${data.get('need')}`,
+      data.get('message').trim() && `${S.enqDetails}: ${data.get('message').trim()}`,
     ].filter(Boolean);
     const url = `https://wa.me/${form.dataset.waNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
     window.open(url, '_blank', 'noopener');

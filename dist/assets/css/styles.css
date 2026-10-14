@@ -35,8 +35,9 @@
   --shadow: 0 1px 2px rgba(34, 27, 23, .05), 0 12px 32px -8px rgba(34, 27, 23, .14);
   --shadow-lg: 0 30px 60px -20px rgba(34, 27, 23, .28);
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Latin glyphs come from the first font; Devanagari falls through to the Hindi fonts (loaded on /hi/ pages). */
+  --font-display: "Fraunces", "Noto Serif Devanagari", "Iowan Old Style", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", "Mukta", system-ui, -apple-system, "Segoe UI", "Nirmala UI", Roboto, sans-serif;
 
   --container: 1200px;
   --gutter: clamp(16px, 4vw, 32px);
@@ -190,6 +191,13 @@ body.nav-open .site-header::before { background: var(--paper); }
 }
 .icon-btn:hover { border-color: var(--ink); color: var(--ink); }
 .nav-toggle { display: none; }
+.lang-switch {
+  display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 14px; border-radius: 999px;
+  border: 1.5px solid var(--line-2); background: var(--surface); color: var(--ink);
+  font-weight: 700; font-size: .9rem; text-decoration: none; white-space: nowrap;
+}
+.lang-switch:hover { border-color: var(--ink); color: var(--ink); }
+.lang-switch:lang(hi) { font-family: "Mukta", "Nirmala UI", "Noto Sans Devanagari", var(--font-body); font-size: 1rem; }
 .nav-drawer-actions { display: none; }
 
 @media (max-width: 1180px) {
@@ -738,6 +746,20 @@ figure.card { margin: 0; }
   pointer-events: none; transition: opacity .2s ease, transform .2s ease;
 }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Hindi (Devanagari) typography ---------- */
+/* Letter-spacing breaks the shirorekha (the line joining Devanagari letters), and tall matras need more line-height. */
+/* Devanagari reads smaller than Latin at the same size, so Hindi pages get a slightly larger base. */
+html:lang(hi) body { line-height: 1.75; font-size: 1.0625rem; }
+html:lang(hi) .nav-list a { font-size: 1.02rem; }
+html:lang(hi) :is(h1, h2, h3, .brand-name, .eyebrow, .brand-sub, .brand-strip-label, .site-footer h2, .offer-card .tag,
+  .media-tag, .swatch-card .meta span, .pairs h3, .rating-big, .calc-result h3) { letter-spacing: 0; }
+html:lang(hi) :is(h1, h2, h3) { line-height: 1.35; }
+html:lang(hi) h1 { font-size: clamp(2.1rem, 2.2vw + 1.45rem, 3.6rem); }
+html:lang(hi) .eyebrow { font-size: .9rem; }
+html:lang(hi) .brand-sub { font-size: .8rem; }
+html:lang(hi) .hero-hindi { font-style: italic; }
+.hero-hindi:lang(hi) { font-family: "Noto Serif Devanagari", "Nirmala UI", var(--font-display); }
 
 @media print {
   .site-header, .wa-float, .mobile-bar, .site-footer, .cta-band { display: none !important; }

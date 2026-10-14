@@ -1,0 +1,58 @@
+---
+title: बरमस्य, बोकारो में पेंट ऑफ़र | {{ name }}
+description: {{ name }}, बरमस्य के मौजूदा पेंट ऑफ़र: त्योहार के ऑफ़र, पेंटर और ठेकेदारों के लिए ख़ास रेट, कॉम्बो बचत और रंग चुनने में मुफ़्त सलाह।
+nav: offers
+crumb: ऑफ़र
+---
+    <section class="page-hero">
+      <svg class="page-hero-blobs" viewBox="0 0 200 200" aria-hidden="true"><circle cx="110" cy="90" r="72" fill="#8e1f2f" opacity=".85"/><circle cx="60" cy="140" r="40" fill="#f4b400"/><circle cx="165" cy="150" r="26" fill="#87c1e6"/></svg>
+      <div class="container">
+        <ol class="breadcrumb"><li><a href="index.html">होम</a></li><li aria-current="page">ऑफ़र</li></ol>
+        <span class="eyebrow">ऑफ़र और डील</span>
+        <h1>अगली पुताई पर करें <span class="hl">बचत</span></h1>
+        <p class="lead">सीज़न के ऑफ़र, कॉम्बो पर बचत और पेंटर व ठेकेदारों के लिए ख़ास रेट। किसी भी ऑफ़र पर टैप करके WhatsApp पर पूछें।</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px" aria-label="मौजूदा ऑफ़र">
+      <div class="container">
+        <div class="grid grid-2" data-offers>
+    {{{ offersHtml }}}
+        </div>
+        <div class="card offers-empty" data-offers-empty>
+          <h3>नए ऑफ़र जल्द आ रहे हैं</h3>
+          <p>अगले ऑफ़र की ख़बर सबसे पहले पाने के लिए WhatsApp पर मैसेज करें।</p>
+          <a class="btn btn--wa btn--sm" href="{{wa "नमस्ते! कृपया अपने मौजूदा ऑफ़र के बारे में बताएँ।"}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>ऑफ़र के बारे में पूछें</a>
+        </div>
+        <p class="note" style="margin-top:28px"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span>ऑफ़र हमारी {{ address.locality }} दुकान पर स्टॉक रहने तक मान्य हैं और जब तक न लिखा हो, दो ऑफ़र एक साथ नहीं मिलेंगे। पेंट कंपनियों के दाम और स्कीम बदल सकते हैं – ख़रीदने से पहले हमसे पक्का कर लें।</span></p>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="always-head">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">हर दिन</span>
+          <h2 id="always-head">हमारे यहाँ ख़रीदारी पर हमेशा मिलता है</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#0e7c7b"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg></span><div><h3>रंग चुनने में मदद</h3><p>शेड और फ़िनिश चुनने में सलाह – दुकान पर या WhatsApp पर।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#ef6b4a"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg></span><div><h3>मात्रा का अनुमान</h3><p>हम ठीक-ठीक बताते हैं कि कितनी पुट्टी, प्राइमर और पेंट लगेगा।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#8e1f2f"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>असली प्रोडक्ट</h3><p>{{ paintBrandText }} का असली स्टॉक।</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>बड़े काम के लिए ख़रीद रहे हैं?</h2>
+            <p>पेंटर, ठेकेदार और बिल्डर – पेंट, पुट्टी, प्राइमर और Astral पाइप के थोक दाम पूछें।</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="{{wa "नमस्ते! मैं पेंटर/ठेकेदार हूँ। कृपया इनके थोक दाम बताएँ: "}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>थोक कोटेशन माँगें</a>
+            <a class="btn btn--marigold" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>कॉल करें {{ phone }}</a>
+          </div>
+        </div>
+      </div>
+    </section>

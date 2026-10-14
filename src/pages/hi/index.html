@@ -1,0 +1,296 @@
+---
+title: बरमस्य, बोकारो में पेंट की दुकान | {{ name }}
+description: बरमस्य, बोकारो (झारखंड {{ address.postalCode }}) में पेंट और रंगों की दुकान। Berger, Asian Paints और Birla Opus के पेंट, पुट्टी, प्राइमर, वॉटरप्रूफिंग और सैनिटरी सामान।
+nav: home
+schema: business,website
+preload: hero-rollers | (max-width: 900px) 80vw, 460px
+---
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="hero-chip" href="{{ reviewsUrl }}" target="_blank" rel="noopener">
+            <span class="stars"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg>{{ ratingText }}</span>
+            Google रेटिंग · {{ address.locality }}, {{ address.district }}
+          </a>
+          <h1>हर दीवार के लिए सही <span class="hl">रंग</span></h1>
+          <p class="hero-hindi" lang="en">Every colour your home deserves.</p>
+          <p class="lead">{{ paintBrandText }} के पेंट, प्राइमर, वॉल पुट्टी और वॉटरप्रूफिंग – साथ में सैनिटरी फ़िटिंग और पाइप भी – दोस्ताना सलाह और सही दाम के साथ, यहीं {{ address.locality }} में।</p>
+          <div class="btn-row">
+            <a class="btn btn--wa" href="{{wa "नमस्ते! मुझे अपने घर के लिए पेंट के बारे में जानकारी चाहिए।"}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp पर पूछें</a>
+            <a class="btn btn--ghost" href="colours.html"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg>रंग देखें</a>
+          </div>
+          <div class="hero-meta">
+            <span class="open-status" data-open-status><span class="dot"></span><span data-open-text>{{ hoursSummary }}</span></span>
+            <a href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{ phone }}</a>
+            <a href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>रास्ता देखें</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-fan" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <figure class="hero-photo">{{img "hero-rollers" "सफ़ेद दीवार पर हरे, लाल, नारंगी और नीले रंग की पट्टियाँ बनाते पेंट रोलर" "(max-width: 900px) 80vw, 460px" "eager"}}</figure>
+          <figure class="hero-store">
+            {{img "store-front" "बरमस्य में आहना एंटरप्राइजेज की पेंट दुकान – Berger और Astral Pipes के बोर्ड और सामने रखी पेंट की बाल्टियाँ" "(max-width: 900px) 50vw, 300px"}}
+            <figcaption><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>{{ address.locality }} में हमारी दुकान</figcaption>
+          </figure>
+          <div class="hero-badge" aria-hidden="true"><span class="swatch-dot"></span><span><strong>हज़ारों शेड</strong>3 बड़े पेंट ब्रांड से</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brand-strip">
+      <div class="container brand-strip-inner">
+        <span class="brand-strip-label">हमारे यहाँ मिलने वाले ब्रांड</span>
+        {{{ brandStripHtml }}}
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="what-we-sell">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">हमारे प्रोडक्ट</span>
+            <h2 id="what-we-sell">दीवारों से लेकर बाथरूम तक – सब कुछ एक जगह</h2>
+            <p class="lead">पुट्टी की पहली परत से लेकर चमकदार फ़िनिश तक, {{ address.locality }} में सब एक ही छत के नीचे।</p>
+          </div>
+          <a class="link-arrow" href="products.html">सभी ब्रांड और प्रोडक्ट देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid-3">
+          <a class="card cat-card reveal" href="products.html#interior" style="--c:#0e7c7b">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg></span>
+            <h3>इंटीरियर पेंट</h3>
+            <p>हर कमरे के लिए धोने लायक इमल्शन, शानदार चमक वाले पेंट और किफ़ायती डिस्टेंपर।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#exterior" style="--c:#ef6b4a">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg></span>
+            <h3>एक्सटीरियर पेंट</h3>
+            <p>झारखंड की तेज़ धूप और भारी बरसात झेलने वाले वेदरप्रूफ़ इमल्शन।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#primers" style="--c:#e8a200">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>प्राइमर और वॉल पुट्टी</h3>
+            <p>बेस कोट जिनसे पेंट ज़्यादा टिकता है और चिकना दिखता है – दीवार, लकड़ी और लोहे के लिए।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#waterproofing" style="--c:#2e3a8c">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-rain"/></svg></span>
+            <h3>वॉटरप्रूफिंग</h3>
+            <p>सीलन के धब्बे, टपकती छत और उखड़ता पेंट – शुरू होने से पहले ही रोकें।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#enamel" style="--c:#8e1f2f">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+            <h3>एनामेल और वुड फ़िनिश</h3>
+            <p>दरवाज़े, खिड़की, ग्रिल और गेट के लिए चमकदार सिंथेटिक एनामेल – ज़ंग और घिसाव से बचाव।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#sanitary" style="--c:#4e8f3a">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg></span>
+            <h3>सैनिटरी और पाइप</h3>
+            <p>Astral के पाइप और फ़िटिंग, Benson सिस्टर्न, नल और बाथरूम का सामान।</p>
+            <span class="link-arrow">देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="find-shade">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">रंगों का कैटलॉग</span>
+            <h2 id="find-shade">अपना <span class="hl" style="--hl:#bfd8a6">पसंदीदा</span> रंग चुनें</h2>
+            <p class="lead">{{ colourCount }} चुने हुए रंग देखें, उन्हें कमरे पर लगाकर देखें और पसंद के रंग सेव करें। आपकी पसंद को हम सही ब्रांड शेड कोड से मिला देंगे।</p>
+          </div>
+          <a class="btn btn--primary" href="colours.html"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg>रंगों का कैटलॉग खोलें</a>
+        </div>
+        <div class="swatch-row">
+        {{{ featuredSwatchesHtml }}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="solutions-head">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">पेंट सॉल्यूशन</span>
+          <h2 id="solutions-head">घर के अंदर हो या बाहर – हर दीवार का हल</h2>
+          <p class="lead">कमरा या सतह बताइए – हम सही प्रोडक्ट, फ़िनिश और मात्रा बताएँगे।</p>
+        </div>
+        <div class="grid grid-2">
+          <a class="split-card reveal" href="solutions.html#interior">
+            {{img "interior-living" "हल्की ग्रे दीवार के सामने सरसों-पीली कुर्सी वाला लिविंग रूम" "(max-width: 640px) 100vw, 50vw"}}
+            <div class="split-body">
+              <h3>घर के अंदर की पुताई</h3>
+              <p>लिविंग रूम, बेडरूम, किचन और बच्चों का कमरा – धोने लायक, कम गंध वाले और दाग़ से बचाने वाले फ़िनिश।</p>
+              <span class="link-arrow">इंटीरियर सॉल्यूशन <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="split-card reveal" href="solutions.html#exterior">
+            {{img "exterior-painting" "सीढ़ियों पर खड़े पेंटर दो-मंज़िला घर की बाहरी दीवार पर लैवेंडर रंग कर रहे हैं" "(max-width: 640px) 100vw, 50vw"}}
+            <div class="split-body">
+              <h3>घर के बाहर की पुताई</h3>
+              <p>मौसम से बचाने वाली दीवारें, वॉटरप्रूफ़ छत और लंबे समय तक टिकने वाले रंग।</p>
+              <span class="link-arrow">एक्सटीरियर सॉल्यूशन <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" aria-labelledby="why-us">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">{{ address.locality }} हमें क्यों चुनता है</span>
+          <h2 id="why-us">ईमानदार सलाह। असली प्रोडक्ट। सही दाम।</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#f4b400"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>असली ब्रांडेड प्रोडक्ट</h3><p>{{ paintBrandText }} का असली, सील-बंद और ताज़ा स्टॉक।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#87c1e6"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><h3>भरोसेमंद सलाह</h3><p>हम सतह के हिसाब से सही प्रोडक्ट चुनने में मदद करते हैं – सबसे महँगा नहीं।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#bfd8a6"><svg class="i" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>सही दाम</h3><p>घर वालों के लिए उचित दाम, और पेंटर व थोक ऑर्डर के लिए बेहतर रेट।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#ef6b4a"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg></span><div><h3>सही मात्रा का अनुमान</h3><p>हमारा <a href="solutions.html#calculator">पेंट कैलकुलेटर</a> इस्तेमाल करें या कमरे का नाप भेजें – ज़रूरत से ज़्यादा ख़रीदने की ज़रूरत नहीं।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#b9a6d3"><svg class="i" aria-hidden="true"><use href="#i-store"/></svg></span><div><h3>पेंट + सैनिटरी एक साथ</h3><p>घर बनवा रहे हैं? पेंट, पाइप, सिस्टर्न और फ़िटिंग – सब एक ही बार में ले जाएँ।</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#f4b400"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><div><h3>रोज़ खुला</h3><p>{{ hoursSummary }} – रविवार को भी।</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="our-store">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">हमारी दुकान</span>
+            <h2 id="our-store">आइए, रंगों को ख़ुद देखिए</h2>
+            <p class="lead">पेंट, प्राइमर और फ़िटिंग से भरी अलमारियाँ – और चुनने में मदद के लिए हमेशा तैयार हमारी टीम।</p>
+          </div>
+          <a class="link-arrow" href="contact.html">{{ address.locality }} में हमारा पता <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="store-gallery reveal">
+          <figure>{{img "store-front" "आहना एंटरप्राइजेज दुकान का सामने का हिस्सा, काउंटर पर रखी पेंट की बाल्टियाँ" "(max-width: 760px) 100vw, 45vw"}}<figcaption>हमारी दुकान</figcaption></figure>
+          <figure>{{img "store-shelves" "Berger, Asian Paints और Birla Opus की बाल्टियों से भरी अलमारियाँ" "(max-width: 760px) 50vw, 25vw"}}<figcaption>पेंट की अलमारियाँ</figcaption></figure>
+          <figure>{{img "store-counter" "आहना एंटरप्राइजेज के पेंट काउंटर पर गेंदे के फूलों की माला" "(max-width: 760px) 50vw, 25vw"}}<figcaption>पेंट काउंटर</figcaption></figure>
+          <figure>{{img "store-primers" "अलमारी में रखे Berger रेड ऑक्साइड प्राइमर और पैरट वुड प्राइमर के डिब्बे" "(max-width: 760px) 50vw, 25vw"}}<figcaption>प्राइमर</figcaption></figure>
+          <figure>{{img "store-sanitary" "Astral पाइप फ़िटिंग और Benson फ़्लशिंग सिस्टर्न वाला सैनिटरी सेक्शन" "(max-width: 760px) 50vw, 25vw"}}<figcaption>सैनिटरी और पाइप</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="offers-head">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">ऑफ़र</span>
+            <h2 id="offers-head">इस सीज़न {{ name }} में</h2>
+          </div>
+          <a class="link-arrow" href="offers.html">सभी ऑफ़र देखें <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid-3">
+    {{{ offersTeaserHtml }}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reviews-head">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">ग्राहकों के रिव्यू</span>
+            <h2 id="reviews-head">हमारे ग्राहक क्या कहते हैं</h2>
+          </div>
+          <div class="rating-summary">
+            <span class="rating-big">{{ ratingText }}</span>
+            <span>
+              <span class="stars-row" aria-hidden="true"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></span><br>
+              <a class="small" href="{{ reviewsUrl }}" target="_blank" rel="noopener">{{ reviewCountText }} के आधार पर</a>
+            </span>
+          </div>
+        </div>
+        <div class="grid grid-3">
+    {{{ reviewsHtml }}}
+          <div class="card review-cta reveal">
+            <h3>हमसे सामान लिया है?</h3>
+            <p>आपका रिव्यू {{ areaServedText }} के पड़ोसियों को भरोसेमंद पेंट दुकान ढूँढने में मदद करता है।</p>
+            <a class="btn btn--primary" href="{{ writeReviewUrl }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg>Google पर रिव्यू लिखें</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="visit-head" id="visit">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">हमारा पता</span>
+          <h2 id="visit-head">{{ address.locality }}, {{ address.district }} में हमें ढूँढें</h2>
+        </div>
+        <div class="location reveal">
+          <div class="location-info">
+            <address><strong>{{ name }}</strong>{{ addressLines }}</address>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span>प्लस कोड: {{ address.plusCode }}</span></p>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="{{ telHref }}">{{ phone }}</a></p>
+            <div>
+              <p class="open-status" data-open-status><span class="dot"></span><span data-open-text>{{ hoursSummary }}</span></p>
+              {{{ hoursTableHtml }}}
+            </div>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg>रास्ता देखें</a>
+              <a class="btn btn--wa" href="{{wa "नमस्ते! कृपया अपनी दुकान की लोकेशन भेजें।"}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+            </div>
+          </div>
+          <div class="map-frame">
+            <iframe src="{{ mapEmbedUrl }}" title="{{ address.locality }} में {{ name }} का नक्शा" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-head">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">सवाल-जवाब</span>
+          <h2 id="faq-head">अक्सर पूछे जाने वाले सवाल</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>{{ name }} कहाँ है?</summary>
+            <p>हमारा पता है: {{ addressLines }} (Google प्लस कोड {{ address.plusCode }})। Google Maps में रास्ता खोलने के लिए <a href="{{ directionsUrl }}" target="_blank" rel="noopener">रास्ता देखें</a> पर टैप करें।</p>
+          </details>
+          <details>
+            <summary>आपके यहाँ कौन-से पेंट ब्रांड मिलते हैं?</summary>
+            <p>हमारे यहाँ {{ paintBrandText }} मिलते हैं – इंटीरियर और एक्सटीरियर इमल्शन, डिस्टेंपर, एनामेल, प्राइमर, वॉल पुट्टी और वॉटरप्रूफिंग। सैनिटरी के लिए Astral के पाइप व फ़िटिंग और Benson सिस्टर्न भी रखते हैं।</p>
+          </details>
+          <details>
+            <summary>क्या रविवार को दुकान खुली रहती है?</summary>
+            <p>हाँ, दुकान हफ़्ते के सातों दिन खुली रहती है। {{ hoursSummary }}।</p>
+          </details>
+          <details>
+            <summary>क्या आप घर के लिए रंग चुनने में मदद करेंगे?</summary>
+            <p>बिल्कुल। हमारा <a href="colours.html">रंगों का कैटलॉग</a> देखें, फिर दुकान आएँ या अपनी दीवारों की फ़ोटो WhatsApp पर भेजें – हम शेड, फ़िनिश और सही प्राइमर बताएँगे।</p>
+          </details>
+          <details>
+            <summary>एक कमरे के लिए कितना पेंट लगेगा?</summary>
+            <p>मोटे तौर पर, एक लीटर इंटीरियर इमल्शन दो कोट में लगभग 60–70 वर्ग फ़ुट कवर करता है। अनुमान के लिए हमारा <a href="solutions.html#calculator">पेंट कैलकुलेटर</a> इस्तेमाल करें, या कमरे का नाप WhatsApp करें।</p>
+          </details>
+          <details>
+            <summary>क्या आप सैनिटरी फ़िटिंग और पाइप भी बेचते हैं?</summary>
+            <p>हाँ – हम पेंट <em>और</em> सैनिटरी दोनों की दुकान हैं। हमारे यहाँ Astral के CPVC, UPVC और SWR पाइप, Drainmaster फ़िटिंग, Benson फ़्लशिंग सिस्टर्न, नल और बाथरूम का दूसरा सामान मिलता है।</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>घर की पुताई करवाने वाले हैं?</h2>
+            <p>कमरे का नाप या फ़ोटो WhatsApp पर भेजें – हम प्रोडक्ट, रंग और सही मात्रा बताएँगे।</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="{{wa "नमस्ते! मैं अपने घर की पुताई करवाना चाहता/चाहती हूँ। क्या आप प्रोडक्ट और मात्रा बताने में मदद करेंगे?"}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp पर बात करें</a>
+            <a class="btn btn--marigold" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>अभी कॉल करें</a>
+          </div>
+        </div>
+      </div>
+    </section>

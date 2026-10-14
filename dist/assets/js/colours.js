@@ -8,6 +8,10 @@
   if (!catalogue) return;
 
   const WA = catalogue.dataset.waNumber;
+  const S = window.SITE_STRINGS;
+  const tpl = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m));
+  // Message variables: {name} English name, {label} name in the page language, {hex}
+  const vars = (c) => ({ name: c.name, label: c.label, hex: c.hex });
   const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
   const STORE_KEY = 'aahana-palette';
 
@@ -38,6 +42,7 @@
     const rgb = hexToRgb(tile.dataset.hex);
     return {
       name: tile.dataset.name,
+      label: tile.dataset.label || tile.dataset.name,
       hex: tile.dataset.hex,
       family: tile.dataset.family,
       tile,
@@ -60,8 +65,8 @@
     colours.forEach((c) => c.tile.classList.toggle('is-saved', saved.includes(c.name)));
     $('[data-palette-dots]').innerHTML = saved.slice(0, 6).map((n) => `<i style="--c:${byName[n].hex}"></i>`).join('');
     paletteBar.classList.toggle('is-visible', saved.length > 0);
-    const lines = saved.map((n) => `• ${n} (${byName[n].hex})`).join('\n');
-    $('[data-palette-send]').href = waLink(`Hello! Here are the colours I've shortlisted from your website:\n${lines}\nPlease suggest the matching shades and quantities.`);
+    const lines = saved.map((n) => tpl(S.paletteLine, vars(byName[n]))).join('\n');
+    $('[data-palette-send]').href = waLink(`${S.paletteIntro}\n${lines}\n${S.paletteEnd}`);
     if (!saved.length && filters.palette) { filters.palette = false; paletteToggle.setAttribute('aria-pressed', 'false'); applyFilters(); }
   }
   function toggleSaved(name) {
@@ -83,14 +88,15 @@
     let shown = 0;
     colours.forEach((c) => {
       const matchFamily = filters.family === 'all' || c.family === filters.family;
-      const matchQuery = !q || c.name.toLowerCase().includes(q) || c.hex.toLowerCase().includes(q) || familyLabels[c.family].toLowerCase().includes(q);
+      const matchQuery = !q || c.name.toLowerCase().includes(q) || c.label.toLowerCase().includes(q)
+        || c.hex.toLowerCase().includes(q) || familyLabels[c.family].toLowerCase().includes(q);
       const matchPalette = !filters.palette || saved.includes(c.name);
       const visible = matchFamily && matchQuery && matchPalette;
       c.tile.hidden = !visible;
       if (visible) shown++;
     });
     $$('[data-family-section]').forEach((s) => { s.hidden = !$$('.colour-tile', s).some((t) => !t.hidden); });
-    resultCount.textContent = `${shown} colour${shown === 1 ? '' : 's'}`;
+    resultCount.textContent = tpl(shown === 1 ? S.countOne : S.countMany, { n: shown });
     empty.classList.toggle('is-visible', shown === 0);
   }
 
@@ -101,7 +107,7 @@
   }));
   $('#colour-search').addEventListener('input', (e) => { filters.query = e.target.value; applyFilters(); });
   paletteToggle.addEventListener('click', () => {
-    if (!saved.length) { window.siteToast?.('Tap the heart on a colour to save it first'); return; }
+    if (!saved.length) { window.siteToast?.(S.saveFirst); return; }
     filters.palette = !filters.palette;
     paletteToggle.setAttribute('aria-pressed', String(filters.palette));
     applyFilters();
@@ -146,24 +152,25 @@
   }
 
   function describe(c) {
-    if (c.lum >= 0.5) return { tone: 'Light', use: 'Small rooms, ceilings and rooms with little sunlight' };
-    if (c.lum >= 0.18) return { tone: 'Medium', use: 'Living rooms, bedrooms and feature walls' };
-    return { tone: 'Deep', use: 'Accent walls, trims, doors and exteriors' };
+    if (c.lum >= 0.5) return { tone: S.toneLight, use: S.useLight };
+    if (c.lum >= 0.18) return { tone: S.toneMedium, use: S.useMedium };
+    return { tone: S.toneDeep, use: S.useDeep };
   }
 
   function openColour(c, { updateHash = true } = {}) {
     current = c;
     const d = describe(c);
     $('[data-cd-swatch]', dialog).style.setProperty('--c', c.hex);
-    $('#cd-name').textContent = c.name;
-    $('[data-cd-family]', dialog).textContent = familyLabels[c.family];
+    $('#cd-name').textContent = c.label;
+    // On translated pages also show the English name – it's what the brand shade cards use.
+    $('[data-cd-family]', dialog).textContent = c.label === c.name ? familyLabels[c.family] : `${familyLabels[c.family]} · ${c.name}`;
     $('[data-cd-hex]', dialog).textContent = c.hex;
     $('[data-cd-tone]', dialog).textContent = d.tone;
-    $('[data-cd-lrv]', dialog).textContent = `about ${Math.round(c.lum * 100)}%`;
+    $('[data-cd-lrv]', dialog).textContent = tpl(S.lrv, { n: Math.round(c.lum * 100) });
     $('[data-cd-use]', dialog).textContent = d.use;
     $('[data-cd-pairs]', dialog).innerHTML = pairsFor(c).map((p) =>
-      `<button type="button" class="pair-btn" data-pair="${p.name}"><i style="--c:${p.hex}"></i>${p.name}</button>`).join('');
-    $('[data-cd-wa]', dialog).href = waLink(`Hello! I'm interested in the colour "${c.name}" (${c.hex}) from your website catalogue. Please suggest the matching brand shade and price.`);
+      `<button type="button" class="pair-btn" data-pair="${p.name}"><i style="--c:${p.hex}"></i>${p.label}</button>`).join('');
+    $('[data-cd-wa]', dialog).href = waLink(tpl(S.colourMsg, vars(c)));
     updateSaveButton();
     paintRoom();
     if (!dialog.open) {
@@ -181,7 +188,7 @@
   function updateSaveButton() {
     const btn = $('[data-cd-save]', dialog);
     const isSaved = saved.includes(current.name);
-    $('span', btn).textContent = isSaved ? 'Saved' : 'Save';
+    $('span', btn).textContent = isSaved ? S.saved : S.save;
     btn.setAttribute('aria-pressed', String(isSaved));
     $('svg', btn).style.fill = isSaved ? 'currentColor' : 'none';
   }
@@ -203,12 +210,12 @@
   $('[data-cd-save]', dialog).addEventListener('click', () => {
     const nowSaved = toggleSaved(current.name);
     updateSaveButton();
-    window.siteToast?.(nowSaved ? `${current.name} saved to your palette` : `${current.name} removed`);
+    window.siteToast?.(tpl(nowSaved ? S.savedToast : S.removedToast, vars(current)));
   });
   $('[data-cd-copy]', dialog).addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(`${current.name} ${current.hex}`);
-      window.siteToast?.(`Copied ${current.hex}`);
+      window.siteToast?.(tpl(S.copied, vars(current)));
     } catch {
       window.siteToast?.(current.hex);
     }

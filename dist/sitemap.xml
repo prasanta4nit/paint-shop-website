@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.example.com/colours.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.example.com/contact.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.example.com/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.example.com/offers.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.example.com/products.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.example.com/solutions.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.example.com/colours.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/colours.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/colours.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/contact.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/contact.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/offers.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/offers.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/offers.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/products.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/products.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/solutions.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/solutions.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/colours.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/colours.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/colours.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/contact.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/contact.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/offers.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/offers.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/offers.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/products.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/products.html"/>
+  </url>
+  <url>
+    <loc>https://www.example.com/hi/solutions.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.example.com/solutions.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://www.example.com/hi/solutions.html"/>
+  </url>
 </urlset>

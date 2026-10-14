@@ -6,11 +6,13 @@
   if (!root) return;
   const form = root.querySelector('#calc-form');
   const out = (key) => root.querySelector(`[data-out="${key}"]`);
+  const S = window.SITE_STRINGS;
+  const tpl = (s, v) => s.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m));
 
   // Typical coverage on a smooth, previously painted surface (sq. ft. per litre, per coat).
   const COVERAGE = {
-    interior: { low: 120, high: 140, label: 'interior emulsion' },
-    exterior: { low: 100, high: 110, label: 'exterior emulsion' },
+    interior: { low: 120, high: 140, label: S.interiorPaint },
+    exterior: { low: 100, high: 110, label: S.exteriorPaint },
   };
   const PRIMER_COVERAGE = 100;          // sq. ft. per litre, one coat
   const PUTTY_COVERAGE = { low: 12, high: 18 }; // sq. ft. per kg, two coats
@@ -54,11 +56,11 @@
       const width = num('roomWidth');
       const ceiling = form.elements.ceiling.checked ? length * width : 0;
       area = Math.max(0, 2 * (length + width) * height - openings) + ceiling;
-      summary = `Interior room ${length} × ${width} ft, wall height ${height} ft${ceiling ? ', ceiling included' : ''}`;
+      summary = tpl(S.summaryInterior, { l: length, w: width, h: height }) + (ceiling ? S.ceilingIncluded : '');
     } else {
       const perimeter = num('perimeter');
       area = Math.max(0, perimeter * height - openings);
-      summary = `Exterior walls ${perimeter} ft long, ${height} ft high`;
+      summary = tpl(S.summaryExterior, { p: perimeter, h: height });
     }
     area = Math.round(area);
 
@@ -70,25 +72,27 @@
     const puttyLow = Math.ceil(area / PUTTY_COVERAGE.high);
     const puttyHigh = Math.ceil(area / PUTTY_COVERAGE.low);
     const paintText = paintLow === paintHigh ? fmtL(paintHigh) : `${fmtL(paintLow)}–${fmtL(paintHigh)}`;
-    const puttyText = puttyLow === puttyHigh ? `${puttyHigh} kg` : `${puttyLow}–${puttyHigh} kg`;
+    const puttyText = `${puttyLow === puttyHigh ? puttyHigh : `${puttyLow}–${puttyHigh}`} ${S.kg}`;
+    const coatsText = tpl(coats > 1 ? S.coatMany : S.coatOne, { n: coats });
     const packs = packsFor(paintHigh);
 
     out('paint').textContent = paintText;
-    out('paintType').textContent = `${cov.label} (${coats} coat${coats > 1 ? 's' : ''})`;
-    out('area').textContent = `${area.toLocaleString('en-IN')} sq. ft.`;
-    out('primer').textContent = `${fmtL(primer)} L`;
+    out('paintType').textContent = `${cov.label} (${coatsText})`;
+    out('area').textContent = `${area.toLocaleString('en-IN')} ${S.sqft}`;
+    out('primer').textContent = `${fmtL(primer)} ${S.litre}`;
     out('putty').textContent = puttyText;
     root.querySelector('[data-out-row="putty"]').hidden = !newWall;
     out('packs').innerHTML = packs.length
-      ? packs.map((p) => `<span>${p.n} × ${p.size} L</span>`).join('')
-      : '<span>Enter your measurements</span>';
+      ? packs.map((p) => `<span>${p.n} × ${p.size} ${S.litre}</span>`).join('')
+      : `<span>${S.enterMeasurements}</span>`;
 
     const lines = [
-      'Hello! I used the paint calculator on your website.',
+      S.calcIntro,
       summary,
-      `Paintable area: ${area} sq. ft.`,
-      `Estimate: ${paintText} L ${cov.label} (${coats} coats), ${fmtL(primer)} L primer${newWall ? `, ${puttyText} wall putty` : ''}`,
-      'Please confirm the quantity and price.',
+      tpl(S.calcArea, { area }),
+      tpl(S.calcEstimate, { paint: paintText, label: cov.label, coats: coatsText, primer: fmtL(primer) })
+        + (newWall ? tpl(S.calcPutty, { putty: puttyText }) : ''),
+      S.calcConfirm,
     ];
     out('wa').href = `https://wa.me/${root.dataset.waNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
   }
