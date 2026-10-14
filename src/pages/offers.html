@@ -1,0 +1,58 @@
+---
+title: Paint Offers in Baramasya, Bokaro | {{ name }}
+description: Current paint offers at {{ name }}, Baramasya: festive deals, painter & contractor pricing, combo savings and free colour consultation.
+nav: offers
+crumb: Offers
+---
+    <section class="page-hero">
+      <svg class="page-hero-blobs" viewBox="0 0 200 200" aria-hidden="true"><circle cx="110" cy="90" r="72" fill="#8e1f2f" opacity=".85"/><circle cx="60" cy="140" r="40" fill="#f4b400"/><circle cx="165" cy="150" r="26" fill="#87c1e6"/></svg>
+      <div class="container">
+        <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Offers</li></ol>
+        <span class="eyebrow">Offers &amp; deals</span>
+        <h1>Save on your next <span class="hl">paint job</span></h1>
+        <p class="lead">Seasonal deals, combo savings and special rates for painters and contractors. Tap any offer to ask us about it on WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px" aria-label="Current offers">
+      <div class="container">
+        <div class="grid grid-2" data-offers>
+    {{{ offersHtml }}}
+        </div>
+        <div class="card offers-empty" data-offers-empty>
+          <h3>New offers coming soon</h3>
+          <p>Message us on WhatsApp to hear about our next deal first.</p>
+          <a class="btn btn--wa btn--sm" href="{{wa "Hello! Please tell me about your current offers."}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>Ask about offers</a>
+        </div>
+        <p class="note" style="margin-top:28px"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span>Offers are valid at our {{ address.locality }} store while stocks last and can't be combined unless stated. Prices and schemes from paint companies may change – please confirm with us before buying.</span></p>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="always-head">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Every day</span>
+          <h2 id="always-head">Always included when you shop with us</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#0e7c7b"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg></span><div><h3>Colour guidance</h3><p>Help choosing shades and finishes – in store or over WhatsApp.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#ef6b4a"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg></span><div><h3>Quantity estimate</h3><p>We calculate exactly how much putty, primer and paint you need.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#8e1f2f"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Genuine products</h3><p>Original stock from {{ paintBrandText }}.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Buying for a big project?</h2>
+            <p>Painters, contractors and builders – ask us for bulk pricing on paint, putty, primer and Astral pipes.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="{{wa "Hello! I'm a painter/contractor. Please share bulk prices for: "}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>Request bulk quote</a>
+            <a class="btn btn--marigold" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call {{ phone }}</a>
+          </div>
+        </div>
+      </div>
+    </section>

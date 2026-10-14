@@ -1,0 +1,120 @@
+---
+title: Contact & Directions, Baramasya | {{ name }}
+description: Visit {{ name }}, Baramasya, Bokaro, Jharkhand {{ address.postalCode }}. Call or WhatsApp {{ phone }}. {{ hoursSummary }}.
+nav: contact
+crumb: Contact & Location
+schema: business
+---
+    <section class="page-hero">
+      <svg class="page-hero-blobs" viewBox="0 0 200 200" aria-hidden="true"><circle cx="115" cy="85" r="70" fill="#0e7c7b" opacity=".85"/><circle cx="62" cy="138" r="42" fill="#ef6b4a" opacity=".9"/><circle cx="165" cy="152" r="28" fill="#f4b400"/></svg>
+      <div class="container">
+        <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Contact &amp; Location</li></ol>
+        <span class="eyebrow">Contact &amp; location</span>
+        <h1>Visit us in <span class="hl">{{ address.locality }}</span></h1>
+        <p class="lead">Drop by the store, call us or send a WhatsApp message – we're happy to help with colours, products and quantities.</p>
+        <p class="open-status" data-open-status><span class="dot"></span><span data-open-text>{{ hoursSummary }}</span></p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px" aria-label="Ways to reach us">
+      <div class="container">
+        <div class="contact-cards">
+          <a class="card contact-card reveal" href="{{ telHref }}">
+            <span class="icon-tile" style="--c:#8e1f2f"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <div><h3>Call us</h3><p>{{ phone }}</p></div>
+          </a>
+          <a class="card contact-card reveal" href="{{wa "Hello! I have an enquiry."}}" target="_blank" rel="noopener">
+            <span class="icon-tile" style="--c:#128c4a"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg></span>
+            <div><h3>WhatsApp</h3><p>Photos, shade names, quantities – just send.</p></div>
+          </a>
+          <a class="card contact-card reveal" href="{{ directionsUrl }}" target="_blank" rel="noopener">
+            <span class="icon-tile" style="--c:#2e3a8c"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg></span>
+            <div><h3>Get directions</h3><p>Open the route in Google Maps</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" aria-labelledby="loc-head">
+      <div class="container">
+        <h2 id="loc-head" class="visually-hidden">Shop location and opening hours</h2>
+        <div class="location reveal">
+          <div class="location-info">
+            <address><strong>{{ fullName }}</strong>{{ addressLines }}, {{ address.countryName }}</address>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span>Google plus code: {{ address.plusCode }}</span></p>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="{{ telHref }}">{{ phone }}</a></p>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-store"/></svg><span>Serving {{ areaServedText }}</span></p>
+            <div>
+              <h3 style="font-size:1rem;margin-bottom:.3rem">Opening hours</h3>
+              {{{ hoursTableHtml }}}
+            </div>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg>Get directions</a>
+              <a class="btn btn--ghost" href="{{ google.mapsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-ext"/></svg>Open in Google Maps</a>
+            </div>
+          </div>
+          <div class="map-frame">
+            <iframe src="{{ mapEmbedUrl }}" title="Google Map showing {{ name }} in {{ address.locality }}, {{ address.district }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="enquiry-head">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start">
+          <div>
+            <span class="eyebrow">Send an enquiry</span>
+            <h2 id="enquiry-head">Tell us what you need</h2>
+            <p class="lead">Fill this in and tap send – it opens WhatsApp with your message ready to go. No forms, no waiting for emails.</p>
+            <form class="card form-card" id="enquiry-form" data-wa-number="{{ whatsapp }}">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="f-name">Your name</label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="f-place">Village / area</label>
+                  <input id="f-place" name="place" type="text" autocomplete="address-level2" placeholder="e.g. Chandankiyari">
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-need">I'm looking for</label>
+                <select id="f-need" name="need">
+                  <option>Interior paint</option>
+                  <option>Exterior paint</option>
+                  <option>Waterproofing</option>
+                  <option>Wall putty / primer</option>
+                  <option>Enamel for doors / grills</option>
+                  <option>Colour advice</option>
+                  <option>Sanitary fittings / pipes</option>
+                  <option>Bulk / contractor order</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-msg">Details</label>
+                <textarea id="f-msg" name="message" placeholder="Room size, shade name, product, quantity…"></textarea>
+              </div>
+              <button class="btn btn--wa" type="submit"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
+              <p class="small muted" style="margin:0">Prefer to talk? Call <a href="{{ telHref }}">{{ phone }}</a>.</p>
+            </form>
+          </div>
+          <div class="grid" style="gap:20px">
+            <figure class="card media-card reveal" style="margin:0">
+              <div class="media" style="aspect-ratio:4/3">{{img "store-front" "Aahana Enterprises store front in Baramasya" "(max-width: 640px) 100vw, 50vw"}}</div>
+              <figcaption class="body"><strong>Look for the yellow building</strong><p>Our shop has Berger and Astral Pipes signboards out front.</p></figcaption>
+            </figure>
+            <div class="card review-cta reveal">
+              <span class="stars-row" aria-label="Rated {{ ratingText }} out of 5 on Google"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg></span>
+              <h3>Rated {{ ratingText }} on Google</h3>
+              <p style="margin:0">Happy with your visit? A quick review helps other families nearby find us.</p>
+              <div class="btn-row">
+                <a class="btn btn--primary btn--sm" href="{{ writeReviewUrl }}" target="_blank" rel="noopener">Write a review</a>
+                <a class="btn btn--ghost btn--sm" href="{{ reviewsUrl }}" target="_blank" rel="noopener">Read reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

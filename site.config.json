@@ -1,0 +1,105 @@
+{
+  "siteUrl": "https://www.example.com",
+
+  "name": "Aahana Enterprises",
+  "fullName": "Aahana Enterprises – Premium Paints & Sanitary Solutions",
+  "tagline": "Premium Paints & Sanitary Solutions",
+  "category": "Paint store",
+  "description": "Paint and sanitary shop in Baramasya, Bokaro (Jharkhand). Berger, Asian Paints and Birla Opus interior and exterior paints, primers, wall putty, enamels, waterproofing, colour advice and sanitary fittings at fair prices.",
+
+  "phone": "+91 88266 54761",
+  "whatsapp": "919213900158",
+  "email": "",
+
+  "address": {
+    "street": "Baramasya",
+    "locality": "Baramasya",
+    "district": "Bokaro",
+    "region": "Jharkhand",
+    "regionCode": "IN-JH",
+    "postalCode": "828134",
+    "country": "IN",
+    "countryName": "India",
+    "plusCode": "F8P5+3X Baramasya, Jharkhand"
+  },
+  "geo": { "lat": 23.4852098, "lng": 86.3098821 },
+  "areaServed": ["Baramasya", "Chandankiyari", "Bokaro district"],
+
+  "google": {
+    "placeId": "ChIJsx_vP0yD9jkRAtibM_2DcaQ",
+    "mapsUrl": "https://maps.app.goo.gl/TzR42NX4wzKCnwGL7",
+    "mapEmbedUrl": "https://maps.google.com/maps?q=Aahana%20Enterprises%20%E2%80%93%20Premium%20Paints%20%26%20Sanitary%20Solutions%2C%20Baramasya%2C%20Jharkhand%20828134&ll=23.4852098,86.3098821&z=16&output=embed",
+    "rating": 5.0,
+    "reviewCount": 2
+  },
+
+  "hours": [
+    { "days": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"], "opens": "08:30", "closes": "20:00" }
+  ],
+
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+
+  "paintBrands": [
+    { "name": "Berger Paints", "colour": "#1D4E9E", "note": "Interior & exterior emulsions, distempers, enamels, primers and waterproofing." },
+    { "name": "Asian Paints", "colour": "#E4002B", "note": "Trusted interior emulsions, exterior paints, enamels and wall care." },
+    { "name": "Birla Opus", "colour": "#B0186E", "note": "The new paint range from the Aditya Birla Group, tinted to your shade." }
+  ],
+  "sanitaryBrands": [
+    { "name": "Astral Pipes", "colour": "#0B5CAB", "note": "CPVC, UPVC & SWR pipes and Drainmaster fittings." },
+    { "name": "Benson", "colour": "#C62828", "note": "Flushing cisterns and bathroom fittings." }
+  ],
+
+  "offers": [
+    {
+      "sample": true,
+      "tag": "Festive season",
+      "title": "Diwali & Chhath home makeover",
+      "text": "Special prices on interior emulsions and distempers for your festive painting. Bring your room size – we'll work out the exact quantity.",
+      "validTill": "2026-11-15",
+      "colour": "#F4B400"
+    },
+    {
+      "sample": true,
+      "tag": "Free service",
+      "title": "Free colour consultation",
+      "text": "Share a photo of your room or house on WhatsApp and we'll shortlist shades, finishes and the right primer for your walls.",
+      "validTill": "",
+      "colour": "#0E7C7B"
+    },
+    {
+      "sample": true,
+      "tag": "Bulk & contractors",
+      "title": "Painter & contractor pricing",
+      "text": "Better rates for painters, contractors and bulk orders of paint, putty, primer and Astral pipes. Ask us for a quote.",
+      "validTill": "",
+      "colour": "#8E1F2F"
+    },
+    {
+      "sample": true,
+      "tag": "Combo",
+      "title": "Putty + primer + paint combo",
+      "text": "Buy the complete wall system together – wall putty, primer and emulsion – and save on the full package.",
+      "validTill": "2026-12-31",
+      "colour": "#2E3A8C"
+    }
+  ],
+
+  "reviews": [
+    {
+      "text": "Excellent paint and sanitary shop with a wide range of quality paints (Berger, Asian and Birla Opus) and accessories. Friendly staff, reasonable price and great service. Highly recommended.",
+      "rating": 5,
+      "source": "Google",
+      "note": ""
+    },
+    {
+      "text": "This is a very good home paint shop. The paint quality is good and the variety of colours is quite good. The shopkeeper is friendly and gives accurate advice. The prices are also reasonable. I would recommend this shop for home painting.",
+      "rating": 5,
+      "source": "Google",
+      "note": "Translated from Hindi"
+    }
+  ]
+}

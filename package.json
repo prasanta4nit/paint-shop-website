@@ -1,0 +1,15 @@
+{
+  "name": "aahana-enterprises-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for Aahana Enterprises – Premium Paints & Sanitary Solutions, Baramasya, Bokaro (Jharkhand)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs",
+    "start": "node build.mjs && node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,296 @@
+---
+title: Paint Shop in Baramasya, Bokaro | {{ name }}
+description: Paint & colour shop in Baramasya, Bokaro (Jharkhand {{ address.postalCode }}). Berger, Asian Paints & Birla Opus paints, putty, primers, waterproofing & sanitary fittings.
+nav: home
+schema: business,website
+preload: hero-rollers | (max-width: 900px) 80vw, 460px
+---
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <a class="hero-chip" href="{{ reviewsUrl }}" target="_blank" rel="noopener">
+            <span class="stars"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg>{{ ratingText }}</span>
+            Rated on Google · {{ address.locality }}, {{ address.district }}
+          </a>
+          <h1>Every <span class="hl">colour</span> your home deserves.</h1>
+          <p class="hero-hindi" lang="hi">हर दीवार के लिए सही रंग</p>
+          <p class="lead">{{ paintBrandText }} paints, primers, wall putty and waterproofing – plus sanitary fittings and pipes – with friendly advice and fair prices, right here in {{ address.locality }}.</p>
+          <div class="btn-row">
+            <a class="btn btn--wa" href="{{wa "Hello! I'd like to enquire about paints for my home."}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp enquiry</a>
+            <a class="btn btn--ghost" href="colours.html"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg>Explore colours</a>
+          </div>
+          <div class="hero-meta">
+            <span class="open-status" data-open-status><span class="dot"></span><span data-open-text>{{ hoursSummary }}</span></span>
+            <a href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{ phone }}</a>
+            <a href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Get directions</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-fan" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          <figure class="hero-photo">{{img "hero-rollers" "Paint rollers painting green, red, orange and blue stripes on a white wall" "(max-width: 900px) 80vw, 460px" "eager"}}</figure>
+          <figure class="hero-store">
+            {{img "store-front" "Aahana Enterprises paint shop in Baramasya with Berger and Astral Pipes signboards and paint buckets on display" "(max-width: 900px) 50vw, 300px"}}
+            <figcaption><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>Our store in {{ address.locality }}</figcaption>
+          </figure>
+          <div class="hero-badge" aria-hidden="true"><span class="swatch-dot"></span><span><strong>1000s of shades</strong>from 3 top paint brands</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="brand-strip">
+      <div class="container brand-strip-inner">
+        <span class="brand-strip-label">Brands on our shelves</span>
+        {{{ brandStripHtml }}}
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="what-we-sell">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">What we sell</span>
+            <h2 id="what-we-sell">Everything for your walls – and your bathroom</h2>
+            <p class="lead">From the first coat of putty to the last coat of gloss, find it all under one roof in {{ address.locality }}.</p>
+          </div>
+          <a class="link-arrow" href="products.html">See all brands &amp; products <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid-3">
+          <a class="card cat-card reveal" href="products.html#interior" style="--c:#0e7c7b">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg></span>
+            <h3>Interior paints</h3>
+            <p>Washable emulsions, luxury sheens and budget-friendly distempers for every room.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#exterior" style="--c:#ef6b4a">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-sun"/></svg></span>
+            <h3>Exterior paints</h3>
+            <p>Weather-proof emulsions that stand up to Jharkhand's summer sun and heavy monsoon.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#primers" style="--c:#e8a200">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3>Primers &amp; wall putty</h3>
+            <p>The base coats that make paint last longer and look smoother – for walls, wood and metal.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#waterproofing" style="--c:#2e3a8c">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-rain"/></svg></span>
+            <h3>Waterproofing</h3>
+            <p>Stop damp patches, leaking roofs and peeling paint before they start.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#enamel" style="--c:#8e1f2f">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
+            <h3>Enamels &amp; wood finishes</h3>
+            <p>Glossy synthetic enamels for doors, windows, grills and gates that resist rust and wear.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="card cat-card reveal" href="products.html#sanitary" style="--c:#4e8f3a">
+            <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-bath"/></svg></span>
+            <h3>Sanitary &amp; pipes</h3>
+            <p>Astral pipes and fittings, Benson cisterns, taps and bathroom accessories.</p>
+            <span class="link-arrow">Explore <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="find-shade">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Colour catalogue</span>
+            <h2 id="find-shade">Find a shade you'll <span class="hl" style="--hl:#bfd8a6">love</span></h2>
+            <p class="lead">Browse {{ colourCount }} hand-picked colours, preview them on a room and save your favourites. We'll match your pick to the exact brand shade code.</p>
+          </div>
+          <a class="btn btn--primary" href="colours.html"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg>Open colour catalogue</a>
+        </div>
+        <div class="swatch-row">
+        {{{ featuredSwatchesHtml }}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="solutions-head">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Paint solutions</span>
+          <h2 id="solutions-head">Inside and out, we've got you covered</h2>
+          <p class="lead">Tell us the room or surface – we'll recommend the right product, finish and quantity.</p>
+        </div>
+        <div class="grid grid-2">
+          <a class="split-card reveal" href="solutions.html#interior">
+            {{img "interior-living" "Living room with a mustard yellow armchair against a soft grey painted wall" "(max-width: 640px) 100vw, 50vw"}}
+            <div class="split-body">
+              <h3>Interior painting</h3>
+              <p>Living rooms, bedrooms, kitchens and kids' rooms – washable, low-odour and stain-resistant finishes.</p>
+              <span class="link-arrow">Interior solutions <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+          <a class="split-card reveal" href="solutions.html#exterior">
+            {{img "exterior-painting" "Painters on ladders painting the exterior of a two-storey house lavender" "(max-width: 640px) 100vw, 50vw"}}
+            <div class="split-body">
+              <h3>Exterior painting</h3>
+              <p>Weather-proof walls, waterproof roofs and long-lasting colours for the outside of your home.</p>
+              <span class="link-arrow">Exterior solutions <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" aria-labelledby="why-us">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why {{ address.locality }} shops with us</span>
+          <h2 id="why-us">Honest advice. Genuine products. Fair prices.</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#f4b400"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Genuine brand products</h3><p>Original {{ paintBrandText }} stock, sealed and fresh.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#87c1e6"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><h3>Advice you can trust</h3><p>We help you pick the right product for the surface – not the most expensive one.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#bfd8a6"><svg class="i" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>Reasonable prices</h3><p>Fair pricing for homeowners, plus better rates for painters and bulk orders.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#ef6b4a"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg></span><div><h3>Exact quantity estimates</h3><p>Use our <a href="solutions.html#calculator">paint calculator</a> or send us your room size – no over-buying.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#b9a6d3"><svg class="i" aria-hidden="true"><use href="#i-store"/></svg></span><div><h3>Paint + sanitary in one stop</h3><p>Renovating? Pick up paints, pipes, cisterns and fittings in a single trip.</p></div></div>
+          <div class="why-item reveal"><span class="icon-tile" style="--c:#f4b400"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><div><h3>Open every day</h3><p>{{ hoursSummary }} – including Sundays.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="our-store">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Our store</span>
+            <h2 id="our-store">Come and see the colours in person</h2>
+            <p class="lead">Shelves full of paints, primers and fittings – and a team that's happy to help you choose.</p>
+          </div>
+          <a class="link-arrow" href="contact.html">Find us in {{ address.locality }} <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="store-gallery reveal">
+          <figure>{{img "store-front" "Front of the Aahana Enterprises shop with paint buckets displayed at the counter" "(max-width: 760px) 100vw, 45vw"}}<figcaption>Our shop front</figcaption></figure>
+          <figure>{{img "store-shelves" "Shelves stocked with Berger, Asian Paints and Birla Opus paint buckets" "(max-width: 760px) 50vw, 25vw"}}<figcaption>Paint shelves</figcaption></figure>
+          <figure>{{img "store-counter" "Festive marigold garlands over the paint counter at Aahana Enterprises" "(max-width: 760px) 50vw, 25vw"}}<figcaption>Paint counter</figcaption></figure>
+          <figure>{{img "store-primers" "Berger Red Oxide Primer and Parrot Wood Primer tins on a shelf" "(max-width: 760px) 50vw, 25vw"}}<figcaption>Primers</figcaption></figure>
+          <figure>{{img "store-sanitary" "Sanitary section with Astral pipe fittings and Benson flushing cisterns" "(max-width: 760px) 50vw, 25vw"}}<figcaption>Sanitary &amp; pipes</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="offers-head">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Offers</span>
+            <h2 id="offers-head">This season at {{ name }}</h2>
+          </div>
+          <a class="link-arrow" href="offers.html">View all offers <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="grid grid-3">
+    {{{ offersTeaserHtml }}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reviews-head">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow">Customer reviews</span>
+            <h2 id="reviews-head">What our customers say</h2>
+          </div>
+          <div class="rating-summary">
+            <span class="rating-big">{{ ratingText }}</span>
+            <span>
+              <span class="stars-row" aria-hidden="true"><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg><svg class="i i-fill"><use href="#i-star"/></svg></span><br>
+              <a class="small" href="{{ reviewsUrl }}" target="_blank" rel="noopener">Based on {{ reviewCountText }}</a>
+            </span>
+          </div>
+        </div>
+        <div class="grid grid-3">
+    {{{ reviewsHtml }}}
+          <div class="card review-cta reveal">
+            <h3>Shopped with us?</h3>
+            <p>Your review helps neighbours in {{ areaServedText }} find a paint shop they can trust.</p>
+            <a class="btn btn--primary" href="{{ writeReviewUrl }}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg>Write a Google review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" aria-labelledby="visit-head" id="visit">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Visit us</span>
+          <h2 id="visit-head">Find us in {{ address.locality }}, {{ address.district }}</h2>
+        </div>
+        <div class="location reveal">
+          <div class="location-info">
+            <address><strong>{{ name }}</strong>{{ addressLines }}</address>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg><span>Plus code: {{ address.plusCode }}</span></p>
+            <p class="info-line"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><a href="{{ telHref }}">{{ phone }}</a></p>
+            <div>
+              <p class="open-status" data-open-status><span class="dot"></span><span data-open-text>{{ hoursSummary }}</span></p>
+              {{{ hoursTableHtml }}}
+            </div>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="{{ directionsUrl }}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-nav"/></svg>Get directions</a>
+              <a class="btn btn--wa" href="{{wa "Hello! Please share your shop location."}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+            </div>
+          </div>
+          <div class="map-frame">
+            <iframe src="{{ mapEmbedUrl }}" title="Map showing {{ name }} in {{ address.locality }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-head">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Questions</span>
+          <h2 id="faq-head">Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Where is {{ name }} located?</summary>
+            <p>We're in {{ addressLines }} (Google plus code {{ address.plusCode }}). Tap <a href="{{ directionsUrl }}" target="_blank" rel="noopener">Get directions</a> to open the route in Google Maps.</p>
+          </details>
+          <details>
+            <summary>Which paint brands do you sell?</summary>
+            <p>We stock {{ paintBrandText }} – interior and exterior emulsions, distempers, enamels, primers, wall putty and waterproofing products. For sanitary work we carry Astral pipes &amp; fittings and Benson cisterns.</p>
+          </details>
+          <details>
+            <summary>Are you open on Sundays?</summary>
+            <p>Yes. We're open all 7 days of the week. {{ hoursSummary }}.</p>
+          </details>
+          <details>
+            <summary>Can you help me choose colours for my house?</summary>
+            <p>Of course. Browse our <a href="colours.html">colour catalogue</a>, then visit the store or send us photos of your walls on WhatsApp – we'll suggest shades, finishes and the right primer.</p>
+          </details>
+          <details>
+            <summary>How much paint do I need for one room?</summary>
+            <p>As a rough guide, one litre of interior emulsion covers about 60–70 sq. ft. with two coats. Use our <a href="solutions.html#calculator">paint calculator</a> for an estimate, or WhatsApp us your room size.</p>
+          </details>
+          <details>
+            <summary>Do you sell sanitary fittings and pipes too?</summary>
+            <p>Yes – we're a paint <em>and</em> sanitary shop. We carry Astral CPVC, UPVC and SWR pipes, Drainmaster fittings, Benson flushing cisterns, taps and other bathroom fittings.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Planning to paint your home?</h2>
+            <p>Send us your room size or a photo on WhatsApp – we'll suggest products, colours and the exact quantity you need.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="{{wa "Hello! I'm planning to paint my home. Can you help me with products and quantity?"}}" target="_blank" rel="noopener"><svg class="i i-fill" aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+            <a class="btn btn--marigold" href="{{ telHref }}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,12 @@
+{
+  "name": "Aahana Enterprises – Premium Paints & Sanitary Solutions",
+  "short_name": "Aahana Paints",
+  "start_url": "index.html",
+  "display": "browser",
+  "background_color": "#fbf7f0",
+  "theme_color": "#8e1f2f",
+  "icons": [
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
