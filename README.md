@@ -67,10 +67,29 @@ After any change, run `node build.mjs` again and upload the new `dist/`.
 
 ## Deploying
 
-Upload the **contents of `dist/`** to any static host:
+### Vercel (set up)
+
+`vercel.json` already tells Vercel to run `node build.mjs` and serve `dist/`. It also adds caching and security headers. While `siteUrl` is still the placeholder, builds on Vercel use the project's production domain automatically.
+
+```bash
+npx vercel login          # once – opens the browser to sign in
+npx vercel --prod         # build on Vercel and publish to production
+```
+
+The first `npx vercel --prod` asks a few setup questions. Accept the defaults, but name the project something like `aahana-enterprises` so the address becomes `aahana-enterprises.vercel.app` (if that name is free).
+
+To redeploy after changing `site.config.json` or the pages, run `npx vercel --prod` again.
+
+**Custom domain:** in Vercel go to Project → Settings → Domains. Once it's added, set `siteUrl` in `site.config.json` to it and redeploy.
+
+Alternatively, push the folder to GitHub and use **Import Project** on vercel.com. It picks up `vercel.json`, and every push redeploys.
+
+### Other hosts
+
+Upload the **contents of `dist/`**:
 
 - **Netlify:** drag the `dist` folder onto app.netlify.com/drop.
-- **Cloudflare Pages / Vercel:** build command `node build.mjs`, output directory `dist`.
+- **Cloudflare Pages:** build command `node build.mjs`, output directory `dist`.
 - **GitHub Pages / shared hosting:** copy `dist/` to the web root.
 
 Links are relative, so the site also works from a sub-folder. `404.html` is picked up automatically by Netlify, Cloudflare Pages and GitHub Pages.
@@ -108,6 +127,7 @@ Links are relative, so the site also works from a sub-folder. `404.html` is pick
 site.config.json     ← shop details, offers, reviews (edit this most)
 build.mjs            ← builds dist/ (no dependencies)
 serve.mjs            ← local preview server
+vercel.json          ← Vercel build settings and headers
 src/
   layout.html        ← shared <head>, header, footer
   pages/*.html       ← one file per page

@@ -32,7 +32,11 @@ const esc = (v) => String(v)
   .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const get = (obj, key) => key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj);
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-const siteUrl = site.siteUrl.replace(/\/+$/, '');
+// While siteUrl is still the placeholder, builds on Vercel use the project's production domain
+// (your custom domain once added, otherwise <project>.vercel.app).
+const isPlaceholderUrl = /example\.com/.test(site.siteUrl);
+const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const siteUrl = (isPlaceholderUrl && vercelUrl ? `https://${vercelUrl}` : site.siteUrl).replace(/\/+$/, '');
 const abs = (p) => `${siteUrl}/${p.replace(/^\/+/, '')}`;
 const icon = (id, fill = false) => `<svg class="i${fill ? ' i-fill' : ''}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
 
@@ -372,7 +376,7 @@ await writeFile(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitema
 console.log('  ✓ sitemap.xml, robots.txt');
 
 // ---------------------------------------------------------------- pre-launch checks
-if (/example\.com/.test(siteUrl)) warnings.push('siteUrl in site.config.json is still https://www.example.com – set it to your real domain so canonical links, the sitemap and social previews are correct.');
+if (/example\.com/.test(siteUrl)) warnings.push('siteUrl in site.config.json is still https://www.example.com – set it to your real domain so canonical links, the sitemap and social previews are correct (builds on Vercel fill this in automatically).');
 const samples = site.offers.filter((o) => o.sample);
 if (samples.length) warnings.push(`${samples.length} offer(s) in site.config.json are marked "sample": true – replace them with your real offers (then delete the "sample" flag) before going live.`);
 const expired = site.offers.filter((o) => o.validTill && o.validTill < today);
